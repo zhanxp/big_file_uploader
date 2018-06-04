@@ -1,0 +1,25 @@
+{
+    "name": "bigfile-server",
+    "version": "1.0.0",
+    "description": "",
+    "main": "app.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "child-process-promise": "^2.2.1",
+        "child_process": "^1.0.2",
+        "enuo-core": "git+https://github.com/zhanxp/enuo-core.git",
+        "koa": "^2.4.1",
+        "koa-body": "^2.5.0",
+        "koa-logger": "^3.1.0",
+        "koa-multer": "^1.0.2",
+        "koa-range": "^0.3.0",
+        "koa-router": "^7.3.0",
+        "koa-static": "^4.0.2",
+        "koa-views": "^6.1.3",
+        "nunjucks": "^3.0.1"
+    }
+}

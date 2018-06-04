@@ -1,0 +1,45 @@
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            <a class="navbar-brand" href="/">Home</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="/">主页</a>
+                </li>
+                <li>
+                    <a href="/category">分类</a>
+                </li>
+                <li>
+                    <a href="/article">文章</a>
+                </li>
+                <li>
+                    <a href="/about">关于</a>
+                </li>
+            </ul>
+            {% if user %}
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="/admin">
+                            {{ user.name }}  你好！</a>
+                </li>
+                <li>
+                    <a href="/account/logout">注销</a>
+                </li>
+            </ul>
+            {% else %}
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a class="loginLink" href="/account/login">登录</a>
+                </li>
+            </ul>
+            {% endif %}
+        </div>
+    </div>
+</div>

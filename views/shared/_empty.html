@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> {% block title %} {% endblock %}
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel='stylesheet' href='/bootstrap/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='/css/site.css'>
+    <script type="text/javascript" src="/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/bootstrap/js/bootstrap.min.js"></script>
+    {% block htmlHead %} {% endblock %}
+</head>
+
+<body>
+    <div class="container body-content">
+        {% block contentBody %} {% endblock %}
+    </div>
+    {% block htmlScript %} {% endblock %}
+</body>
+
+</html>

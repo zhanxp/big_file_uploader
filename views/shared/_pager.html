@@ -1,0 +1,41 @@
+<div class="page-mod">
+    <div class="result">
+        共{$total}条数据,分{$pageCount}页,每页显示{$pageSize}条
+    </div>
+    <nav class="text-right">
+        <ul class="pagination">
+            {if condition="$pageIndex==1" }
+            <li class="prev disabled"><a>首页</a></li>
+            <li class="prev disabled"><a>&nbsp;<</a></li>
+            {else /}
+            <li class="prev"><a href="{$url}pageIndex=1" data-page="1" title="首页">首页</a></li>
+            <li class="prev"><a href="{$url}pageIndex={$pageIndex - 1 }" data-page="{$pageIndex - 1}" title="上一页">&nbsp;<</a></li>
+            {/if} {assign name="start" value="1" /} {if condition="$pageIndex>4" } {assign name="start" value="$pageIndex - 1" /}
+            <li><a href="{$url}pageIndex=1" data-page="1">1</a></li>
+            <li><a href="{$url}pageIndex=2" data-page="2">2</a></li>
+            <li class="disabled"><a>&hellip;</a></li>
+            {/if} {assign name="end" value="$pageIndex + 1" /} {if condition="$end > $pageCount" } {assign name="end" value="$pageCount" /} {/if} {for start="$start" end="$end + 1"} {if condition="$pageIndex == $i" }
+            <li class="active"><a>{$i}</a></li>
+            {else /}
+            <li><a href="{$url}pageIndex={$i}" data-page="{$i}">{$i}</a></li>
+            {/if} {/for} {if condition="$end < $pageCount-2 " }
+            <li class="disabled "><a>&hellip;</a></li>
+            {/if} 
+           
+            {if condition="$end < $pageCount-1 " }
+            <li><a href="{$url}pageIndex={$pageCount - 1 } " data-page="{$pageCount - 1 } ">{$ pageCount-1 }</a></li>
+            {/if} 
+            {if condition="$end < $pageCount " }
+            <li><a href="{$url}pageIndex={$pageCount } " data-page="{$pageCount } ">{$ pageCount }</a></li>
+            {/if} 
+
+            {if condition="$pageIndex==$pageCount " }
+            <li class="next disabled "><a>>&nbsp;</a></li>
+            <li class="next disabled "><a>末页</a></li>
+            {else /}
+                <li class="next "><a href="{$url}pageIndex={$pageIndex + 1 } " data-page="{$pageIndex + 1} " title="下一页 ">>&nbsp;</a></li>
+                <li class="next "><a href="{$url}pageIndex={$pageCount } " data-page="{$pageCount } " title="末页 ">末页</a></li>
+                {/if} 
+        </ul>
+    </nav>
+</div>
